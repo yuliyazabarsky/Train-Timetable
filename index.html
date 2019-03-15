@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <title>Train-TimeTable</title>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="jumbotron">
+            <h1 class="text-center">Travel by Train :)</h1>
+        </div>
+        <div class="container border mb-3" id="train-times-container">
+            <div class="row">
+                <div class="bg-success text-light col-md-12 p-1" id="train-times">Train Schedules</div>
+            </div>
+            <table class="table text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">Train Name</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Frequency (min)</th>
+                        <th scope="col">Next Arrival</th>
+                        <th scope="col">Minutes Away</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="col" id="trainname"></td>
+                        <td scope="col" id="dest"></td>
+                        <td scope="col" id="freq"></td>
+                        <td scope="col" id="nextarr"></td>
+                        <td scope="col" id="minaway"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container border mb-3" id="train-times-container">
+            <div class="row">
+                <div class="bg-success text-light col-md-12 p-1" id="newTrainInput">Add Train</div>
+            </div>
+            <br>
+            <form>
+                <div class="form-group">
+                    <label for="TrainNameInput">Train Name</label>
+                    <input type="text" class="form-control" id="trainNameInput">
+                </div>
+                <div class="form-group">
+                    <label for="yourDestination">Destination</label>
+                    <input type="text" class="form-control" id="destinationInput">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">First Train Time (HH:mm - military time)</label>
+                    <input type="text" class="form-control" id="firstTrainTimeInput">
+                </div>
+                <div class="form-group">
+                    <label for="Frequency">Frequency (min)</label>
+                    <input type="text" class="form-control" id="frequencyInput">
+                </div>
+                <button type="submit" class="btn btn-success" id="userSubmit">Submit</button>
+            </form>
+            <br>
+
+
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="assets/script.js"></script>
+</body>
+
+</html>
