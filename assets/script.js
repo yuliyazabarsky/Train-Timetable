@@ -50,7 +50,7 @@ database.ref().on("child_added", function (snapshot) {
     console.log(firstTimeConverted);
 
     var currentTime = moment();
-    console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+    console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm"));
 
 
     // Difference between the times
@@ -68,7 +68,7 @@ database.ref().on("child_added", function (snapshot) {
 
 
     // Next Train
-    var nextTrain = moment().add(tMinutesTillTrain, "minutes").format("hh:mm");
+    var nextTrain = moment().add(tMinutesTillTrain, "minutes").format("HH:mm");
     console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
 
 
