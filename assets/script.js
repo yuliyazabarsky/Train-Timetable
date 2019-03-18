@@ -24,14 +24,17 @@ $("#userSubmit").on("click", function (event) {
     var destination = $("#destinationInput").val().trim();
     var firstTrainTime = $("#firstTrainTimeInput").val().trim();
     var frequency = $("#frequencyInput").val().trim();
-
-    database.ref().push({
-        trainName: trainName,
-        destination: destination,
-        firstTrainTime: firstTrainTime,
-        frequency: frequency,
-        datedAdded: firebase.database.ServerValue.TIMESTAMP
-    });
+    if (trainName || destination || firstTrainTime || frequency === "") {
+        return false;
+    } else {
+        database.ref().push({
+            trainName: trainName,
+            destination: destination,
+            firstTrainTime: firstTrainTime,
+            frequency: frequency,
+            datedAdded: firebase.database.ServerValue.TIMESTAMP
+        });
+    }
     // Clear inputs 
     $("#trainNameInput").val("");
     $("#destinationInput").val("");
