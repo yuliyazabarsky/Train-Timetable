@@ -18,15 +18,20 @@ var frequency;
 //capture submit click 
 $("#userSubmit").on("click", function (event) {
     event.preventDefault();
-
+    console.log('hi')
     // Grab values from input boxes 
     var trainName = $("#trainNameInput").val().trim();
     var destination = $("#destinationInput").val().trim();
     var firstTrainTime = $("#firstTrainTimeInput").val().trim();
     var frequency = $("#frequencyInput").val().trim();
-    if (trainName || destination || firstTrainTime || frequency === "") {
+/////////
+    if(trainName === ""|| destination === "" || firstTrainTime ==="" || frequency ===""){
         return false;
-    } else {
+    
+        } 
+        else {
+            
+        console.log('hi')
         database.ref().push({
             trainName: trainName,
             destination: destination,
@@ -35,11 +40,13 @@ $("#userSubmit").on("click", function (event) {
             datedAdded: firebase.database.ServerValue.TIMESTAMP
         });
     }
+
     // Clear inputs 
     $("#trainNameInput").val("");
     $("#destinationInput").val("");
     $("#firstTrainTimeInput").val("");
     $("#frequencyInput").val("");
+
 });
 //firebase listener 
 database.ref().on("child_added", function (snapshot) {
@@ -72,7 +79,8 @@ database.ref().on("child_added", function (snapshot) {
 
     // Next Train
     var nextTrain = moment().add(tMinutesTillTrain, "minutes").format("HH:mm");
-    console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+    console.log('next train: ', nextTrain)
+    console.log("ARRIVAL TIME: " + moment(nextTrain, "HH:mm").format("HH:mm"));
 
 
     var trainNameDispaly = $("<td>" + snapshot.val().trainName + "</td>")
