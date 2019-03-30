@@ -18,7 +18,6 @@ var frequency;
 //capture submit click 
 $("#userSubmit").on("click", function (event) {
     event.preventDefault();
-    console.log('hi')
     // Grab values from input boxes 
     var trainName = $("#trainNameInput").val().trim();
     var destination = $("#destinationInput").val().trim();
@@ -30,8 +29,6 @@ $("#userSubmit").on("click", function (event) {
     
         } 
         else {
-            
-        console.log('hi')
         database.ref().push({
             trainName: trainName,
             destination: destination,
