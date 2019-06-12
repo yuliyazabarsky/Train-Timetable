@@ -5,4 +5,4 @@
 
 
 ***********
-Technologies used in this app: JavaScript, JQuery, Firebase. 
+Technologies used in this app: JavaScript, JQuery, Firebase, Moment.js.
